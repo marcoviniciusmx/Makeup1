@@ -84,6 +84,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Container centralizado com largura máxima */
@@ -94,6 +95,7 @@ body {
 }
 
 /* Imagens responsivas */
+
 img {
     max-width: 100%;
     height: auto;
@@ -229,7 +231,7 @@ p {
     box-shadow: var(--shadow);
     z-index: 1000;
     /* Fica acima de todo conteúdo */
-    padding: 15px 0;
+    padding: 8px 0;
 }
 
 /* Container da navegação */
@@ -240,13 +242,35 @@ p {
 }
 
 /* Logo/Nome do negócio */
-.logo {
+/* .logo {
     font-size: 1.5rem;
     font-weight: 800;
     color: var(--primary);
-}
+    position: relative;
+    left: 16%;
+} */
 
 /* Menu de navegação */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 180px;
+    width: auto;
+    object-fit: contain;
+    margin-top: 10px;
+    filter: contrast(1.5) brightness(1.35);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
 .nav-menu {
     display: flex;
     gap: 30px;
@@ -306,7 +330,7 @@ p {
 /* Hero com imagem de fundo em tela cheia */
 .hero {
     padding: 140px 0 80px;
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     position: relative;
@@ -327,6 +351,8 @@ p {
 .hero-bg-image {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center top;
 }
 
 /* Overlay sobre a imagem para melhor legibilidade */
@@ -558,6 +584,8 @@ section {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 200px);
     gap: 15px;
+    border: none;
+    outline: none;
 }
 
 /* Primeiro item ocupa 2 colunas e 2 linhas */
@@ -576,7 +604,13 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: left center;
+    border-radius: 15px;
     /* transition: var(--transition); */
+}
+
+.galeria-item:nth-child(5) img {
+    object-position: center 17%;
 }
 
 /* .galeria-item:hover img {
@@ -1299,9 +1333,32 @@ section {
     /* Botões empilhados */
     .hero-buttons {
         flex-direction: column;
+        gap: 10px;
     }
 
     .hero-buttons .btn {
         width: 100%;
+    }
+
+    .header {
+        padding: 6px 0;
+    }
+
+    .nav {
+        height: 50px;
+    }
+
+    .logo-image {
+        height: 120px;
+        width: auto;
+    }
+
+    .nav-menu {
+        top: 60px;
+        padding: 25px;
+    }
+
+    .hero {
+        padding: 100px 0 50px;
     }
 }
