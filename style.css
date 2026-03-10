@@ -227,7 +227,8 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--white);
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
     z-index: 1000;
     /* Fica acima de todo conteúdo */
@@ -239,6 +240,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 72px;
 }
 
 /* Logo/Nome do negócio */
@@ -254,25 +256,21 @@ p {
 .logo {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .logo-image {
+    display: block;
     height: 180px;
     width: auto;
     object-fit: contain;
     margin-top: 10px;
-    filter: contrast(1.5) brightness(1.35);
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
+    filter: contrast(1.15) brightness(1.08);
 }
 
 .nav-menu {
     display: flex;
+    align-items: center;
     gap: 30px;
 }
 
@@ -329,7 +327,7 @@ p {
 /* ========== 6. HERO SECTION ========== */
 /* Hero com imagem de fundo em tela cheia */
 .hero {
-    padding: 140px 0 80px;
+    padding: 150px 0 90px;
     min-height: calc(100vh - 60px);
     display: flex;
     align-items: center;
@@ -340,10 +338,7 @@ p {
 /* Container da imagem de fundo */
 .hero-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     z-index: 0;
 }
 
@@ -353,22 +348,20 @@ p {
     height: 100%;
     object-fit: cover;
     object-position: center top;
+    display: block;
 }
 
 /* Overlay sobre a imagem para melhor legibilidade */
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(135deg, rgba(45, 42, 50, 0.9) 0%, rgba(45, 42, 50, 0.7) 100%);
 }
 
 /* Grid do hero - 2 colunas */
 .hero .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 60px;
     align-items: center;
     position: relative;
@@ -524,6 +517,10 @@ section {
     margin: 0 auto 60px;
 }
 
+.sobre-header {
+    white-space: nowrap;
+}
+
 
 .section-header p {
     font-size: 1.125rem;
@@ -547,17 +544,20 @@ section {
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
+    background: var(--white);
 }
 
 .sobre-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: var(--transition);
 }
 
 .sobre-image:hover img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .sobre-text p {
@@ -582,10 +582,8 @@ section {
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 200px);
+    grid-template-rows: repeat(2, 220px);
     gap: 15px;
-    border: none;
-    outline: none;
 }
 
 /* Primeiro item ocupa 2 colunas e 2 linhas */
@@ -601,11 +599,11 @@ section {
 }
 
 .galeria-item img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: left center;
-    border-radius: 15px;
     /* transition: var(--transition); */
 }
 
@@ -619,24 +617,24 @@ section {
 
 .feature {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     align-items: flex-start;
 }
 
 .text-feature {
-    text-align: justify;
-    line-height: 1.4;
+    text-align: left;
+    line-height: 1.5;
 }
 
 .feature-icon {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     flex-shrink: 0;
 }
 
 .feature h3 {
     color: var(--text);
-    margin-bottom: 5px;
-    width: 350px;
+    margin-bottom: 6px;
+    width: auto;
 }
 
 .feature p {
@@ -652,7 +650,7 @@ section {
 /* Grid de cards de serviços */
 .servicos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
 }
 
@@ -664,6 +662,8 @@ section {
     transition: var(--transition);
     overflow: hidden;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hover do card de serviço */
@@ -675,15 +675,20 @@ section {
 /* Imagem do card de serviço */
 .servico-image {
     width: 100%;
-    height: 350px;
+    height: 320px;
     overflow: hidden;
 }
 
 .servico-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     /* transition: var(--transition); */
+}
+
+.img-penteados {
+    object-position: center 70%;
 }
 
 /* .servico-card:hover .servico-image img {
@@ -694,6 +699,7 @@ section {
 .servico-content {
     padding: 25px;
     text-align: center;
+    flex: 1;
 }
 
 .servico-content h3 {
@@ -1194,11 +1200,23 @@ section {
 
 /* Tablets e telas médias */
 @media (max-width: 992px) {
+    .nav {
+        min-height: 68px;
+    }
 
-    /* Hero em coluna única no tablet */
+    .logo-image {
+        height: 62px;
+    }
+
+    .hero {
+        padding: 140px 0 70px;
+        min-height: auto;
+    }
+
     .hero .container {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 40px;
     }
 
     .hero-buttons {
@@ -1207,9 +1225,10 @@ section {
 
     .hero-stats {
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
     }
 
-    /* Visual do hero primeiro no mobile */
     .hero-visual {
         order: -1;
     }
@@ -1218,63 +1237,85 @@ section {
         max-width: 300px;
     }
 
-    /* Sobre em coluna única */
     .sobre-content {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .sobre-image {
-        max-height: 400px;
+        max-width: 700px;
+        margin: 0 auto;
     }
 
-    /* Contato em coluna única */
+    .sobre-image img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+    }
+
     .contato-content {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    /* Galeria responsiva */
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
+        grid-template-rows: 220px 220px 220px;
     }
 
     .galeria-item.grande {
         grid-column: span 2;
         grid-row: span 1;
     }
+
+    .servicos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 /* Celulares */
 @media (max-width: 768px) {
+    .nav {
+        min-height: 60px;
+    }
 
-    /* Menu mobile */
+    .logo-image {
+        height: 52px;
+    }
+
+    .nav-toggle {
+        display: flex;
+        z-index: 1002;
+    }
+
     .nav-menu {
         position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--white);
+        top: 72px;
+        left: 16px;
+        right: 16px;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
         flex-direction: column;
-        padding: 30px;
-        gap: 20px;
-        box-shadow: var(--shadow);
-        transform: translateY(-150%);
+        align-items: flex-start;
+        padding: 24px;
+        gap: 18px;
+        border-radius: 18px;
+        box-shadow: var(--shadow-hover);
+        transform: translateY(-20px);
         opacity: 0;
+        pointer-events: none;
         transition: var(--transition);
     }
 
-    /* Menu mobile ativo */
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
+        pointer-events: auto;
     }
 
-    /* Mostra o botão hambúrguer */
-    .nav-toggle {
-        display: flex;
-    }
-
-    /* Animação do hambúrguer para X */
     .nav-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
@@ -1287,26 +1328,36 @@ section {
         transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    /* Ajustes de padding */
     .hero {
         padding: 120px 0 60px;
     }
 
+    .hero .container {
+        gap: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
     .hero-stats {
         flex-direction: column;
-        gap: 20px;
+        gap: 18px;
     }
 
     section {
-        padding: 60px 0;
+        padding: 70px 0;
     }
 
-    /* Grids em coluna única */
     .servicos-grid,
     .destaques-grid,
     .beneficios-grid,
     .depoimentos-grid {
         grid-template-columns: 1fr;
+    }
+
+    .servico-image {
+        height: 300px;
     }
 
     .footer-links {
@@ -1317,20 +1368,23 @@ section {
 
 /* Celulares pequenos */
 @media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
     h1 {
-        font-size: 1.75rem;
+        font-size: 1.9rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.55rem;
     }
 
     .btn {
-        padding: 12px 20px;
-        font-size: 0.9rem;
+        padding: 12px 18px;
+        font-size: 0.92rem;
     }
 
-    /* Botões empilhados */
     .hero-buttons {
         flex-direction: column;
         gap: 10px;
@@ -1341,24 +1395,70 @@ section {
     }
 
     .header {
-        padding: 6px 0;
+        padding: 4px 0;
     }
 
     .nav {
-        height: 50px;
+        min-height: 56px;
     }
 
     .logo-image {
-        height: 120px;
-        width: auto;
+        height: 46px;
     }
 
     .nav-menu {
-        top: 60px;
-        padding: 25px;
+        top: 64px;
+        left: 12px;
+        right: 12px;
+        padding: 20px;
     }
 
     .hero {
-        padding: 100px 0 50px;
+        padding: 105px 0 50px;
+    }
+
+    .hero-image-container {
+        max-width: 240px;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+    }
+
+    .sobre-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .feature {
+        gap: 14px;
+    }
+
+    .feature-icon {
+        font-size: 1.8rem;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 220px);
+    }
+
+    .galeria-item.grande {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .servico-image {
+        height: 260px;
+    }
+
+    .depoimento-card,
+    .beneficio-card,
+    .servico-content {
+        padding: 22px;
     }
 }
