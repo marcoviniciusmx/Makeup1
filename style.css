@@ -25,41 +25,44 @@
 /* ========== 1. VARIÁVEIS CSS ========== */
 /* EDITÁVEL: Personalize as cores principais do tema aqui */
 :root {
-    /* Cores principais - tons de rosa e lilás para estética */
-    --primary: #c77dff;
-    /* Lilás principal */
-    --primary-dark: #9d4edd;
-    /* Lilás escuro */
-    --secondary: #e0aaff;
-    /* Rosa claro */
-    --accent: #f8edeb;
-    /* Bege rosado */
+    /* Cores principais - marrom elegante + dourado */
+    --primary: #C6A15B;
+    /* dourado suave */
+
+    --primary-dark: #A8843F;
+    /* dourado mais intenso */
+
+    --secondary: #E7D3A8;
+    /* dourado claro */
+
+    --accent: #F5EFE6;
+    /* bege claro sofisticado */
 
     /* Cores de fundo */
-    --bg: #fefcff;
-    /* Fundo principal (quase branco) */
-    --bg-alt: #f8f0fc;
-    /* Fundo alternativo (lilás bem claro) */
+    --bg: #FCFAF7;
+    /* fundo principal clean */
 
-    /* Cores de texto */
-    --text: #2d2a32;
-    /* Texto principal (quase preto) */
-    --text-light: #6b6573;
-    /* Texto secundário (cinza) */
+    --bg-alt: #F2E8D8;
+    /* fundo alternativo */
+
+    /* Texto */
+    --text: #3E2F23;
+    /* marrom elegante */
+
+    --text-light: #7A6A5A;
+    /* marrom claro */
+
     --white: #ffffff;
-    /* Branco puro */
 
-    /* Efeitos */
-    --shadow: 0 4px 20px rgba(157, 78, 221, 0.1);
-    --shadow-hover: 0 8px 30px rgba(157, 78, 221, 0.2);
+    /* Sombras mais elegantes */
+    --shadow: 0 4px 20px rgba(166, 132, 63, 0.12);
+    --shadow-hover: 0 8px 30px rgba(166, 132, 63, 0.18);
 
-    /* Bordas e transições */
+    /* Bordas */
     --radius: 16px;
-    /* Bordas arredondadas */
     --radius-sm: 10px;
-    /* Bordas menores */
+
     --transition: all 0.3s ease;
-    /* Transição suave */
 }
 
 /* ========== 2. RESET E BASE ========== */
@@ -177,6 +180,7 @@ p {
     background: var(--white);
     color: var(--primary);
     border: 2px solid var(--primary);
+    font-weight: bold;
 }
 
 /* Efeito hover do botão secundário */
