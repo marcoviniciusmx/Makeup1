@@ -875,6 +875,14 @@ section {
     transition: var(--transition);
 }
 
+.bride {
+    object-position: center top;
+}
+
+.bride-mf {
+    object-position: center 35%;
+}
+
 .depoimento-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
