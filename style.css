@@ -246,12 +246,6 @@ p {
     height: 72px;
 }
 
-/* Logo/Nome do negócio */
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary);
-}
 
 /* Menu de navegação */
 .logo {
@@ -1040,23 +1034,34 @@ section {
 
 /* Item de informação */
 .info-item {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.info-item>div:last-child {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     align-items: flex-start;
 }
 
 .info-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
+    width: 36px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 1.8rem;
+    line-height: 1;
 }
 
 .info-item h4 {
     color: var(--text);
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .info-item p {
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 /* Container do mapa */
@@ -1214,7 +1219,7 @@ section {
     }
 
     .logo-image {
-        height: 62px;
+        height: 100px;
     }
 
     .hero {
@@ -1266,8 +1271,8 @@ section {
     }
 
     .contato-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .galeria-grid {
@@ -1281,7 +1286,15 @@ section {
     }
 
     .servicos-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contato-mapa {
+        width: 50%;
+    }
+
+    .flores-noiva img {
+        object-position: center 42%;
     }
 }
 
@@ -1298,7 +1311,7 @@ section {
     }
 
     .logo-image {
-        height: 52px;
+        height: 150px;
     }
 
     .nav-toggle {
@@ -1375,9 +1388,93 @@ section {
         height: 300px;
     }
 
+    .contato-content {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .contato-info {
+        width: 40%;
+    }
+
+    .contato-mapa {
+        width: 60%;
+    }
+
+    .mapa-placeholder p {
+        font-size: .7rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .mapa-placeholder span {
+        text-align: center;
+    }
+
+    .contato-info {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    .info-item {
+        display: grid;
+        grid-template-columns: 32px auto;
+        gap: 14px;
+        align-items: start;
+        width: fit-content;
+    }
+
+    .info-icon {
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 1.8rem;
+        line-height: 1;
+    }
+
+    .info-item>div:last-child {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info-item h4 {
+        margin-bottom: 6px;
+    }
+
+    .info-item p {
+        margin: 0;
+    }
+
+    .btn-whatsapp,
+    .btn-instagram {
+        margin-top: 10px;
+        min-width: 100px;
+        text-align: center;
+    }
+
     .footer-links {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .studio-jessica img {
+        object-position: center 55%;
+    }
+
+    .flores-noiva img {
+        object-position: center 45%;
+    }
+
+    .profissional-make img {
+        object-position: center 35%;
+    }
+
+    .stylish-hairstyles img {
+        object-position: center 48%;
     }
 }
 
@@ -1422,7 +1519,7 @@ section {
     }
 
     .logo-image {
-        height: 36px;
+        height: 100px;
         max-width: 140px;
     }
 
@@ -1480,5 +1577,30 @@ section {
     .beneficio-card,
     .servico-content {
         padding: 22px;
+    }
+
+    .contato-content {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .contato-info {
+        width: 40%;
+    }
+
+    .contato-mapa {
+        width: 60%;
+    }
+
+    .btn-whatsapp,
+    .btn-instagram {
+        margin-top: 10px;
+        min-width: 100px;
+        text-align: center;
+    }
+
+    .flores-noiva img {
+        object-position: center 40%;
     }
 }
