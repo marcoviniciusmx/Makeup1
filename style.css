@@ -704,8 +704,17 @@ section {
     /* transition: var(--transition); */
 }
 
+.civil-bride {
+    object-position: center 40%;
+}
+
 .img-penteados {
-    object-position: center 50%;
+    object-position: center 42%;
+}
+
+.curso-auto {
+    object-position: center 20%;
+    height: 80%;
 }
 
 /* .servico-card:hover .servico-image img {
@@ -1436,7 +1445,7 @@ section {
     }
 
     .servicos-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .studio-jessica img {
@@ -1536,6 +1545,10 @@ section {
 
     .servico-image {
         height: 300px;
+    }
+
+    .civil-bride {
+        object-position: center 35%;
     }
 
     .contato-content {
@@ -1652,7 +1665,7 @@ section {
     }
 
     .stylish-hairstyles img {
-        object-position: center 48%;
+        object-position: center 36%;
     }
 }
 
