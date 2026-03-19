@@ -100,8 +100,6 @@ body {
     padding: 0 20px;
 }
 
-
-
 /* Imagens responsivas */
 
 img {
@@ -350,54 +348,90 @@ p {
     overflow: hidden;
 }
 
+
 /* Container da imagem de fundo */
 .hero-background {
     position: absolute;
     inset: 0;
     z-index: 0;
-}
-
-/* Imagem de fundo do hero */
-.hero-bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
+    background-image: url("./assets/background-noiva-hero.jpeg");
+    background-repeat: no-repeat;
+    background-position: center 38%;
+    background-size: cover;
+    background-color: #d8ccb7;
 }
 
 /* Overlay sobre a imagem para melhor legibilidade */
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(45, 42, 50, 0.9) 0%, rgba(45, 42, 50, 0.7) 100%);
+    background: linear-gradient(to right,
+            rgba(190, 165, 120, 0.58) 0%,
+            rgba(205, 182, 145, 0.42) 28%,
+            rgba(222, 204, 176, 0.18) 52%,
+            rgba(245, 239, 230, 0.06) 72%,
+            rgba(255, 255, 255, 0.02) 100%);
 }
 
 /* Grid do hero - 2 colunas */
 .hero .container {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1fr;
     gap: 60px;
     align-items: center;
     position: relative;
     z-index: 1;
 }
 
+.hero-content {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    width: 100%;
+    max-width: 620px;
+}
+
 /* Textos do hero em branco */
 .hero h1 {
-    color: var(--white);
+    background: linear-gradient(135deg,
+            #dda866 0%,
+            #caa374 45%,
+            #c9b8a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero .hero-subtitle {
-    color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg,
+            #6d553f 0%,
+            #a79176 50%,
+            #bca792 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
 }
 
 .hero .stat-number {
-    color: var(--secondary);
+    color: var(--primary-dark);
 }
 
 .hero .stat-label {
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg,
+            #6d553f 0%,
+            #79644a 50%,
+            #7e7062 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 /* Badge de destaque no hero */
@@ -410,6 +444,7 @@ p {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 20px;
+    width: fit-content;
 }
 
 /* Subtítulo do hero */
@@ -1361,11 +1396,66 @@ section {
         min-height: auto;
     }
 
+    .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image: url("./assets/background-noiva-hero.jpeg");
+        background-repeat: no-repeat;
+        background-position: center 30%;
+        background-size: cover;
+        background-color: #d8ccb7;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(to right,
+                rgba(190, 165, 120, 0.68) 0%,
+                rgba(205, 182, 145, 0.52) 35%,
+                rgba(222, 204, 176, 0.25) 60%,
+                rgba(245, 239, 230, 0.10) 80%,
+                rgba(255, 255, 255, 0.03) 100%);
+    }
+
     .hero .container {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 40px;
     }
+
+    .hero-content {
+        justify-self: center;
+        align-items: center;
+        max-width: 700px;
+    }
+
+    .hero-content h1 {
+        background: linear-gradient(135deg,
+                #dda866 0%,
+                #caa374 45%,
+                #c9b8a6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .hero-content p {
+        background: linear-gradient(135deg,
+                #6d553f 0%,
+                #a79176 50%,
+                #bca792 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        font-weight: 700;
+    }
+
+
+    .hero-badge {
+        margin: 0 auto 20px;
+    }
+
 
     .hero-buttons {
         justify-content: center;
@@ -1384,6 +1474,7 @@ section {
     .hero-image-container {
         max-width: 300px;
     }
+
 
     .sobre-content {
         grid-template-columns: 1fr;
@@ -1694,6 +1785,17 @@ section {
         font-size: 0.92rem;
     }
 
+    .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image: url("./assets/background-noiva-hero.jpeg");
+        background-repeat: no-repeat;
+        background-position: 20% top;
+        background-size: cover;
+        background-color: #d8ccb7;
+    }
+
     .hero-buttons {
         flex-direction: column;
         gap: 10px;
@@ -1733,10 +1835,26 @@ section {
 
     .section-header {
         margin-bottom: 40px;
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto 40px;
+        padding: 0 8px;
+    }
+
+    .section-header h2 {
+        font-size: 1.1rem;
+        text-align: center;
+        word-break: normal;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
 
     .section-header p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        text-align: center;
+        word-break: normal;
+        overflow-wrap: break-word;
+        white-space: normal;
     }
 
     .sobre-text p {
