@@ -630,16 +630,26 @@ section {
 }
 
 .galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 220px);
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    width: 100%;
+}
+
+.galeria-bloco h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--text);
 }
 
 /* Primeiro item ocupa 2 colunas e 2 linhas */
-.galeria-item.grande {
-    grid-column: span 2;
-    grid-row: span 2;
+.lago-norte,
+.sobradinho2 {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr 0.8fr;
+    grid-template-rows: 220px 220px;
+    gap: 16px;
+    width: 100%;
 }
 
 .galeria-item {
@@ -657,12 +667,45 @@ section {
     /* transition: var(--transition); */
 }
 
+.galeria-item.grande {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.lago-norte .galeria-item:nth-child(2),
+.sobradinho2 .galeria-item:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.lago-norte .galeria-item:nth-child(3),
+.sobradinho2 .galeria-item:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.lago-norte .galeria-item:nth-child(4),
+.sobradinho2 .galeria-item:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.lago-norte .galeria-item:nth-child(5),
+.sobradinho2 .galeria-item:nth-child(5) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
 .galeria-item:nth-child(4) img {
     object-position: center 60%;
 }
 
 .galeria-item:nth-child(5) img {
     object-position: center 58%;
+}
+
+.sob2 img {
+    object-position: center 70%;
 }
 
 /* .galeria-item:hover img {
@@ -704,7 +747,7 @@ section {
 /* Grid de cards de serviços */
 .servicos-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     gap: 30px;
 }
 
@@ -715,9 +758,21 @@ section {
     box-shadow: var(--shadow);
     transition: var(--transition);
     overflow: hidden;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
+}
+
+.servico-card:nth-child(-n+3) {
+    grid-column: span 2;
+}
+
+.servico-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.servico-card:nth-child(5) {
+    grid-column: 4 / span 2;
 }
 
 /* Hover do card de serviço */
@@ -752,6 +807,10 @@ section {
 .curso-auto {
     object-position: center 20%;
     height: 80%;
+}
+
+.make-hairstyle img {
+    object-position: center 12%;
 }
 
 /* .servico-card:hover .servico-image img {
@@ -1527,18 +1586,23 @@ section {
         object-position: center 50%;
     }
 
-    .galeria-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 220px 220px 220px;
+    .lago-norte,
+    .sobradinho2 {
+        grid-template-columns: 1.2fr 1fr 1fr;
+        grid-template-rows: 200px 200px;
+        gap: 14px;
     }
 
-    .galeria-item.grande {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
 
     .servicos-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .servico-card,
+    .servico-card:nth-child(-n+3),
+    .servico-card:nth-child(4),
+    .servico-card:nth-child(5) {
+        grid-column: auto;
     }
 
     .studio-jessica img {
@@ -1629,15 +1693,36 @@ section {
         padding: 70px 0;
     }
 
-    .servicos-grid,
+    .servicos {
+        padding-bottom: 35px;
+    }
+
+    .destaques,
+    .beneficios,
+    .depoimentos,
+    .faq,
+    .contato {
+        padding-top: 35px;
+    }
+
     .destaques-grid,
     .beneficios-grid,
     .depoimentos-grid {
         grid-template-columns: 1fr;
     }
 
-    .servico-image {
-        height: 300px;
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .servico-card,
+    .servico-card:nth-child(4),
+    .servico-card:nth-child(5) {
+        grid-column: auto;
+        justify-self: stretch;
+        align-self: start;
+        height: auto;
     }
 
     .civil-bride {
@@ -1646,7 +1731,7 @@ section {
 
     .contato-content {
         display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
+        grid-template-columns: 1fr;
         gap: 24px;
         align-items: stretch;
     }
@@ -1733,7 +1818,7 @@ section {
         text-align: center;
     }
 
-    .contato-imagem.-box {
+    .contato-imagem-box {
         width: 100%;
         height: 100%;
         min-height: 100%;
@@ -1745,12 +1830,59 @@ section {
         gap: 15px;
     }
 
-    .studio-jessica img {
-        object-position: center 55%;
+    .lago-norte,
+    .sobradinho2 {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 260px 180px 180px;
+        gap: 12px;
     }
 
-    .flores-noiva img {
-        object-position: center 45%;
+    .lago-norte .galeria-item.grande,
+    .sobradinho2 .galeria-item.grande {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .lago-norte .galeria-item:nth-child(2),
+    .sobradinho2 .galeria-item:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .lago-norte .galeria-item:nth-child(3),
+    .sobradinho2 .galeria-item:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .lago-norte .galeria-item:nth-child(4),
+    .sobradinho2 .galeria-item:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .lago-norte .galeria-item:nth-child(5),
+    .sobradinho2 .galeria-item:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    .sobradinho2 {
+        grid-template-columns: 0.9fr 1.1fr;
+        grid-template-rows: 220px 170px 170px;
+        gap: 12px;
+    }
+
+    .galeria-grid {
+        gap: 60px;
+    }
+
+    .sob2 img {
+        object-position: center 70%;
+    }
+
+    .galeria-bloco h3 {
+        margin-bottom: 16px;
     }
 
     .profissional-make img {
@@ -1871,13 +2003,38 @@ section {
     }
 
     .galeria-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 220px);
+        gap: 40px;
     }
 
+    .lago-norte,
+    .sobradinho2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 12px;
+    }
+
+    .lago-norte .galeria-item.grande,
+    .sobradinho2 .galeria-item.grande,
+    .lago-norte .galeria-item:nth-child(2),
+    .sobradinho2 .galeria-item:nth-child(2),
+    .lago-norte .galeria-item:nth-child(3),
+    .sobradinho2 .galeria-item:nth-child(3),
+    .lago-norte .galeria-item:nth-child(4),
+    .sobradinho2 .galeria-item:nth-child(4),
+    .lago-norte .galeria-item:nth-child(5),
+    .sobradinho2 .galeria-item:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .galeria-item,
     .galeria-item.grande {
-        grid-column: span 1;
-        grid-row: span 1;
+        height: 220px;
+    }
+
+    .galeria-bloco h3 {
+        font-size: 1.2rem;
+        margin-bottom: 14px;
     }
 
     .servico-image {
