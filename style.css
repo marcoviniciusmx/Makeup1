@@ -395,26 +395,15 @@ p {
 
 /* Textos do hero em branco */
 .hero h1 {
-    background: linear-gradient(135deg,
-            #dda866 0%,
-            #caa374 45%,
-            #c9b8a6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    color: #b88942;
+    background: none;
+    -webkit-text-fill-color: initial;
 }
 
-.hero .hero-subtitle {
-    background: linear-gradient(135deg,
-            #6d553f 0%,
-            #a79176 50%,
-            #bca792 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    font-weight: 700;
+.hero .hero-subtitle,
+.hero-content p {
+    color: #5f4631;
+    font-weight: 600;
 }
 
 .hero .stat-number {
@@ -422,16 +411,8 @@ p {
 }
 
 .hero .stat-label {
-    font-size: 1rem;
-    font-weight: 600;
-    background: linear-gradient(135deg,
-            #6d553f 0%,
-            #79644a 50%,
-            #7e7062 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    color: #5f4631;
+    font-weight: 500;
 }
 
 /* Badge de destaque no hero */
@@ -442,7 +423,7 @@ p {
     padding: 8px 16px;
     border-radius: 50px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 20px;
     width: fit-content;
 }
@@ -708,6 +689,10 @@ section {
     object-position: center 70%;
 }
 
+.noiva-sob2 img {
+    object-position: center 7%;
+}
+
 /* .galeria-item:hover img {
     transform: scale(1.1);
 } */
@@ -794,6 +779,10 @@ section {
     height: 100%;
     object-fit: cover;
     /* transition: var(--transition); */
+}
+
+.curso-automake img {
+    object-position: center 50%;
 }
 
 .civil-bride {
@@ -1488,26 +1477,19 @@ section {
     }
 
     .hero-content h1 {
-        background: linear-gradient(135deg,
-                #dda866 0%,
-                #caa374 45%,
-                #c9b8a6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
+        color: #b88942;
+        background: none;
+        -webkit-text-fill-color: initial;
     }
 
+    .hero-subtitle,
     .hero-content p {
-        background: linear-gradient(135deg,
-                #6d553f 0%,
-                #a79176 50%,
-                #bca792 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-        font-weight: 700;
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+        background-clip: initial;
+        color: #5f4631;
+        font-weight: 600;
     }
 
 
@@ -1588,14 +1570,16 @@ section {
 
     .lago-norte,
     .sobradinho2 {
-        grid-template-columns: 1.2fr 1fr 1fr;
-        grid-template-rows: 200px 200px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 250px 250px;
         gap: 14px;
     }
 
 
     .servicos-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+        gap: 24px;
+        align-items: start;
     }
 
     .servico-card,
@@ -1603,14 +1587,24 @@ section {
     .servico-card:nth-child(4),
     .servico-card:nth-child(5) {
         grid-column: auto;
+        justify-self: stretch;
+        align-self: start;
     }
 
-    .studio-jessica img {
-        object-position: center 22%;
+    .servico-image {
+        height: 500px;
     }
 
-    .flores-noiva img {
-        object-position: center 42%;
+    .civil-bride {
+        object-position: center 40%;
+    }
+
+    .img-penteados {
+        object-position: center 40%;
+    }
+
+    .curso-automake img {
+        object-position: center 64%;
     }
 }
 
@@ -1678,10 +1672,36 @@ section {
 
     .hero .container {
         gap: 32px;
+        text-align: justify;
+    }
+
+    .hero h1 {
+        color: #b88942;
+        background: none;
+        -webkit-text-fill-color: initial;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        counter-reset: black;
+    }
+
+    .hero .stat-number {
+        color: var(--primary-dark);
+    }
+
+    .hero .stat-label {
+        color: #5f4631;
+        font-weight: 500;
+    }
+
+    .hero-subtitle,
+    .hero-content p {
+        background: none;
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+        background-clip: initial;
+        color: #5f4631;
+        font-weight: 600;
     }
 
     .hero-stats {
@@ -1723,6 +1743,10 @@ section {
         justify-self: stretch;
         align-self: start;
         height: auto;
+    }
+
+    .curso-automake img {
+        object-position: center 60%;
     }
 
     .civil-bride {
@@ -1833,7 +1857,7 @@ section {
     .lago-norte,
     .sobradinho2 {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 260px 180px 180px;
+        grid-template-rows: 320px 220px 220px;
         gap: 12px;
     }
 
@@ -1868,8 +1892,8 @@ section {
     }
 
     .sobradinho2 {
-        grid-template-columns: 0.9fr 1.1fr;
-        grid-template-rows: 220px 170px 170px;
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-rows: 280px 250px 250px;
         gap: 12px;
     }
 
@@ -1891,6 +1915,10 @@ section {
 
     .stylish-hairstyles img {
         object-position: center 36%;
+    }
+
+    .noiva-sob2 img {
+        object-position: center 8%;
     }
 }
 
@@ -1915,6 +1943,11 @@ section {
     .btn {
         padding: 12px 18px;
         font-size: 0.92rem;
+    }
+
+    .hero .container {
+        text-align: justify;
+        gap: 30px;
     }
 
     .hero-background {
@@ -2029,7 +2062,7 @@ section {
 
     .galeria-item,
     .galeria-item.grande {
-        height: 220px;
+        height: 320px;
     }
 
     .galeria-bloco h3 {
@@ -2170,5 +2203,9 @@ section {
     .beneficios-grid .beneficio-card:nth-child(6) {
         grid-column: auto;
         grid-row: auto;
+    }
+
+    .noiva-sob2 img {
+        object-position: center 7%;
     }
 }
