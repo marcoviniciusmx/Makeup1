@@ -1571,7 +1571,7 @@ section {
     .lago-norte,
     .sobradinho2 {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 250px 250px;
+        grid-template-rows: 250px 220px;
         gap: 14px;
     }
 
