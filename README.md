@@ -16,7 +16,7 @@
 <br>
 
 <p align="center">
-  <img alt="Jessica Menezes Makeup Preview" src="./assets/preview-projeto.png" width="100%">
+  <img alt="Jessica Menezes Makeup Preview" src="https://raw.githubusercontent.com/marcoviniciusmx/Makeup1/e1fda9ea3c6938166d665e421986cd5e38aa1daa/assets/Mockup.svg" width="100%">
 </p>
 
 ---
