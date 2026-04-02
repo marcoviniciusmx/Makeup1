@@ -9,8 +9,7 @@
   <a href="#-features">Funcionalidades</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#-technologies">Tecnologias</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#-project-structure">Estrutura</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#-getting-started">Como executar</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="#-author">Autor</a>
+  <a href="#-getting-started">Como executar</a>
 </p>
 
 <br>
